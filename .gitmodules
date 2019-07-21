@@ -1,6 +1,3 @@
-[submodule "awesome-terminal-fonts"]
-	path = awesome-terminal-fonts
-	url = git@github.com:msamsel/awesome-terminal-fonts.git
 [submodule "z"]
 	path = z
 	url = git@github.com:msamsel/z.git
