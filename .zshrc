@@ -66,7 +66,7 @@ plugins=(
 )
 
 # Need to define font before sourcing oh-my-zsh
-POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,8 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # add z
 . ~/.z-source/z.sh
 
-# add fonts
-source ~/.fonts/*.sh
 
 # See also https://github.com/Falkor/dotfiles/blob/master/oh-my-zsh/
 # Font taken from https://github.com/stefano-meschiari/dotemacs/blob/master/SourceCodePro%2BPowerline%2BAwesome%2BRegular.ttf
@@ -129,14 +127,27 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
 #POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv rbenv rvm time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon battery context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv nvm time)
 
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uE868  %d.%m.%y}"
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 
 POWERLEVEL9K_STATUS_VERBOSE=false
 
+POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(red1 orangered1 darkorange orange1 gold1 yellow1 yellow2 greenyellow chartreuse1 chartreuse2 green1)
+POWERLEVEL9K_BATTERY_STAGES="▁▂▃▄▅▆▇█"
+POWERLEVEL9K_BATTERY_VERBOSE=false
+POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND=$DEFAULT_COLOR
+POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=$DEFAULT_COLOR
+POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND=$DEFAULT_COLOR
+POWERLEVEL9K_BATTERY_LOW_FOREGROUND=$DEFAULT_COLOR
+
 export DEFAULT_USER="$USER"
+
+
+# Add nvm:
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
